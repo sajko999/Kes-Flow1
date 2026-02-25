@@ -1,0 +1,20 @@
+ { 
+    "name": "KesFlow", 
+    "short_name": "KesFlow", 
+    "start_url": "./index.html", 
+    "display": "standalone", 
+    "background_color": "#0a1a2f", 
+    "theme_color": "#2ecc71", 
+    "icons": [ 
+        { 
+            "src": "img/logoKF.png", 
+            "sizes": "192x192", 
+            "type": "image/png" 
+        }, 
+        { 
+            "src": "img/logoKF.png", 
+            "sizes": "512x512", 
+            "type": "image/png" 
+        } 
+    ] 
+}

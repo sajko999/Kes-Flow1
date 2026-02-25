@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json"> 
+    <meta name="theme-color" content="#2ecc71">
+    <title>KesFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="meni">
+        <img id="logo" src="img/logoKF.png"><span><h1> -   Control your Flow   - </h1></span>
+        <div class="navigation">
+           <a href="#">Pregled</a>
+           <a href="invest.html">Investicije</a>
+        </div>
+       </div>
+       <br><br><br>
+        <div class="month-nav">
+            <button onclick="changeMonth(-1)">&lt;</button>
+            <h2 id="currentMonth"></h2>
+            <button onclick="changeMonth(1)">&gt;</button>
+        </div>
+    
+    <h1>Ukupni Rashodi: <span id="total"></span> RSD</h1>
+    <br> <br><br>
+    
+  <form id="expenseForm">
+  <input id="name" placeholder="Naziv"></input>
+  <input
+    type="number"
+    id="amount"
+    placeholder="Iznos"
+    required
+  />
+
+  <select id="category" required>
+    <option value="">Izaberi kategoriju</option>
+    <option value="Hrana">Hrana</option>
+    <option value="Piće">Piće</option>
+    <option value="Trening">Trening</option>
+    <option value="Prevoz">Prevoz</option>
+    <option value="Računi">Računi</option>
+    <option value="Izlasci">Izlasci</option>
+    <option value="Kupovina">Kupovina</option>
+    <option value="Ostalo">Ostalo</option>
+  </select>
+
+  <button type="submit">Dodaj rashod</button>
+</form>
+    <br> <br>
+    <hr>
+    <ul id="expensesList"></ul>
+    <br> <br>
+    <hr>
+    <div id="investmentWarning"></div>
+    <div class="dashboard">
+     <h2>Potrošnja po kategorijama</h2>
+     <div id="categoryList" class="category-list">
+
+     </div>
+    </div>
+    </div>
+    <script src="utils/dateUtilis.js"></script>
+    <script src="app.js"></script>
+    <script>
+      if("serviceWorker" in navigator){
+        navigator.serviceWorker.register("sw.js")
+        .then(()=>console.log("Service Worker registrovan"))
+        .catch(err=> console.error("SW greska:",err));
+      }
+    </script>
+</body>
+</html>
